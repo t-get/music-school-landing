@@ -808,6 +808,7 @@ h3 {
   cursor: pointer;
   padding: 8px;
   z-index: 100;
+  position: relative;
 }
 
 .burger span {
@@ -819,10 +820,12 @@ h3 {
 }
 
 /* Мобильное меню */
-@media (max-width: 640px) {
-  .burger { display: flex; }
+@media (max-width: 820px) {
+  .burger {
+    display: flex;
+  }
 
-  nav {
+  .nav {
     position: fixed;
     top: 0;
     right: -100%;
@@ -833,11 +836,16 @@ h3 {
     padding: 90px 30px 30px;
     transition: right 0.3s ease;
     z-index: 99;
-    display: flex;
+    display: flex !important; /* перебивает display:none из 820px */
   }
 
-  nav.active { right: 0; }
+  .nav.active {
+    right: 0;
+  }
 
-  nav a { margin: 16px 0; font-size: 1.1rem; }
+  .nav a {
+    margin: 16px 0;
+    font-size: 1.1rem;
+  }
 }
 }
