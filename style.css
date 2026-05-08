@@ -800,4 +800,44 @@ h3 {
   .faq-item summary {
     padding-right: 28px;
   }
+  /* Бургер-кнопка */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 100;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  transition: 0.3s;
+}
+
+/* Мобильное меню */
+@media (max-width: 640px) {
+  .burger { display: flex; }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background: var(--surface);
+    flex-direction: column;
+    padding: 90px 30px 30px;
+    transition: right 0.3s ease;
+    z-index: 99;
+    display: flex;
+  }
+
+  nav.active { right: 0; }
+
+  nav a { margin: 16px 0; font-size: 1.1rem; }
+}
 }

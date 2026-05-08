@@ -11,3 +11,14 @@ const revealOnScroll = () => {
 
 revealOnScroll();
 window.addEventListener("scroll", revealOnScroll);
+// Переключение мобильного меню
+function toggleMenu() {
+  document.querySelector('nav').classList.toggle('active');
+}
+
+// Закрыть меню при клике на ссылку
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('nav').classList.remove('active');
+  });
+});
